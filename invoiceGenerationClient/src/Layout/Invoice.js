@@ -21,8 +21,8 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
 import Download from "@mui/icons-material/Download";
 import { DataContext } from "../Context/DataContext";
-import BasicInput from "./BasicInput";
-import BackDrop from "./BackDrop";
+import BasicInput from "../components/BasicInput";
+import BackDrop from "../components/BackDrop";
 
 export default function Invoice() {
   const navigate = useNavigate();
