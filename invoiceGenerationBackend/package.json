@@ -1,0 +1,23 @@
+{
+  "name": "invoicegenerationbackend",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-generator": "^4.16.1",
+    "libreoffice-convert": "^1.5.0",
+    "nodemon": "^3.0.2",
+    "number-to-words": "^1.2.4",
+    "pdf-creator-node": "^2.3.5",
+    "phantom-html-to-pdf": "^0.8.3",
+    "wkhtmltopdf": "^0.4.0"
+  }
+}
