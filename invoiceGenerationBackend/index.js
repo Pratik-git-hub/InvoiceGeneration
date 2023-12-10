@@ -24,10 +24,10 @@ app.post("/generate", async (req, res) => {
   );
   if (flag) {
     const options = {
-      root: path.join(__dirname),
+      root: path.join(__dirname , "/generatedpdf"),
     };
 
-    const fileName = `${req.body.data.InvoiceNo}.pdf`;
+    const fileName = `${__dirname}/generatedpdf/${req.body.data.InvoiceNo}.pdf`;
     console.log("hiiiiiiiiiiiiiiiiiiii");
     res
     .download(fileName , function (err) {

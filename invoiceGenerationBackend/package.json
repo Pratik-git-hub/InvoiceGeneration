@@ -16,6 +16,6 @@
     "libreoffice-convert": "^1.5.0",
     "nodemon": "^3.0.2",
     "number-to-words": "^1.2.4",
-    "pdf-creator-node": "^2.3.5",
+    "pdf-creator-node": "^2.3.5"
   }
 }
