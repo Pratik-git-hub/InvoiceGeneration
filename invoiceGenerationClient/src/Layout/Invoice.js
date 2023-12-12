@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import Paper from "@mui/material/Paper";
 import Alert from "@mui/material/Alert";
-import Backdrop from '@mui/material/Backdrop';
 import { useNavigate } from "react-router-dom";
 import {
   GridRowModes,
@@ -12,7 +11,6 @@ import {
   GridRowEditStopReasons,
 } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
-import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
@@ -20,6 +18,7 @@ import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
 import Download from "@mui/icons-material/Download";
+
 import { DataContext } from "../Context/DataContext";
 import BasicInput from "../components/BasicInput";
 import BackDrop from "../components/BackDrop";
@@ -231,7 +230,7 @@ export default function Invoice() {
     }
     console.log("data.InvoiceNo", data.InvoiceNo, "  ", flag);
     if (data.InvoiceNo && flag) {
-      setOpen(true)
+      setOpen(true);
       axios
         .post("/generate", { data: data, rows: rows }, { responseType: "blob" })
         .then((res) => {
@@ -252,10 +251,10 @@ export default function Invoice() {
           // clean up "a" element & remove ObjectURL
           document.body.removeChild(link);
           URL.revokeObjectURL(href);
-          setOpen(false)
+          setOpen(false);
         })
         .catch((error) => {
-          setOpen(false)
+          setOpen(false);
           setAlert(true);
           console.log("sdffffffffffffffffff");
           setAlertMessage("Internal Server Error");
@@ -277,12 +276,6 @@ export default function Invoice() {
     navigate("/view", { state: { data, rows } });
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleOpen = () => {
-    setOpen(true);
-  };
   return (
     <Paper elevation={3} sx={{ margin: "60px 60px 60px 60px " }}>
       {alert && (
@@ -328,7 +321,7 @@ export default function Invoice() {
           }}
         />
       </Box>
-      {open && <BackDrop open/>}
+      {open && <BackDrop open />}
     </Paper>
   );
 }

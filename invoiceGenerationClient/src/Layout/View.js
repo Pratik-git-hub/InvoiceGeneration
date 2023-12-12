@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import BackDrop from "./BackDrop";
+import BackDrop from "../components/BackDrop";
 
 export default function View(props) {
   const location = useLocation();

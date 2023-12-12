@@ -1,7 +1,7 @@
 import "./App.css";
-import Invoice from "./components/Invoice";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import View from "./components/View";
+import Invoice from "./Layout/Invoice";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import View from "./Layout/View";
 import { useState } from "react";
 import { DataContext } from "./Context/DataContext";
 import NavBar, { Copyright } from "./components/NavBar";
