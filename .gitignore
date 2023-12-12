@@ -1,2 +1,5 @@
 invoiceGenerationBackend/node_modules/*
 invoiceGenerationClient/node_modules/*
+invoiceGenerationBackend/generatedpdf/*
+
+

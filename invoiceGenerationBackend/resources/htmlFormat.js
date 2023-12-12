@@ -1,26 +1,26 @@
 import converter from "number-to-words";
 
 let htmlFormat = (data, rows) => {
-  let ms = data.Ms;
-  let invoiceNo = data.InvoiceNo;
-  let invoiceDate = data.InvoiceDate;
-  let DC = data.DC;
-  let DCDate = data.DCDate;
-  let PONo = data.PONo;
-  let PODate = data.PODate;
-  let Gstin = data.GSTINNumber;
-  let vendorCode = data.vendorCode;
+  let ms = data.Ms
+  let invoiceNo = data.InvoiceNo
+  let invoiceDate = data.InvoiceDate
+  let DC = data.DC
+  let DCDate = data.DCDate
+  let PONo = data.PONo
+  let PODate = data.PODate
+  let Gstin = data.GSTINNumber
+  let vendorCode = data.vendorCode
 
-  let TaxableValuePerItem;
-  let CGSTAmountPerItem;
-  let SGSTAmountPerItem;
-  let TotalAmountWithGstPerItem;
-  let TotalTaxableValue = 0;
-  let TotalCGSTAmount = 0;
-  let TotalSGSTAmount = 0;
-  let TotalAmountWithGst = 0;
+  let TaxableValuePerItem
+  let CGSTAmountPerItem
+  let SGSTAmountPerItem
+  let TotalAmountWithGstPerItem
+  let TotalTaxableValue = 0
+  let TotalCGSTAmount = 0
+  let TotalSGSTAmount = 0
+  let TotalAmountWithGst = 0
 
-  let dummyrows = [];
+  let dummyrows = []
 
   function insertBreaks(inputString) {
     // Insert <br> after every 40 characters
@@ -45,7 +45,6 @@ let htmlFormat = (data, rows) => {
   ms = insertBreaks(data.Ms);
 
   for (let i = 0; i < rows.length; i++) {
-    console.log("----------------------------", rows[i], i);
     TaxableValuePerItem = rows[i].rate * rows[i].Qty;
     CGSTAmountPerItem = (TaxableValuePerItem * rows[i].Cgst) / 100;
     SGSTAmountPerItem = (TaxableValuePerItem * rows[i].Sgst) / 100;
@@ -55,7 +54,6 @@ let htmlFormat = (data, rows) => {
     TotalCGSTAmount += CGSTAmountPerItem;
     TotalSGSTAmount += SGSTAmountPerItem;
     TotalAmountWithGst += TotalAmountWithGstPerItem;
-    console.log("rows ----------------------");
   }
 
   TotalTaxableValue =
@@ -81,29 +79,13 @@ let htmlFormat = (data, rows) => {
 
   let format = `
     
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns:v="urn:schemas-microsoft-com:vml"
-    xmlns:o="urn:schemas-microsoft-com:office:office"
-    xmlns:x="urn:schemas-microsoft-com:office:excel"
-    xmlns="http://www.w3.org/TR/REC-html40">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
+    <html >
     
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="ProgId" content="Excel.Sheet"/>
-    <meta name="Generator" content="Aspose.Cells 23.8"/>
-    <link rel="File-List" href="_files_files/filelist.xml"/>
-    <link rel="Edit-Time-Data" href="_files_files/editdata.mso"/>
-    <link rel="OLE-Object-Data" href="_files_files/oledata.mso"/>
-    <!--[if gte mso 9]><xml>
-     <o:DocumentProperties>
-      <o:Author>Pratik Kulkarni</o:Author>
-      <o:LastPrinted>2023-11-28T19:01:07Z</o:LastPrinted>
-      <o:Created>2023-11-28T16:47:29Z</o:Created>
-      <o:LastSaved>2023-11-28T19:05:24Z</o:LastSaved>
-    </o:DocumentProperties>
-    </xml><![endif]-->
+    
     <style>
-        <!--table
+        table
          {mso-displayed-decimal-separator:"\.";
          mso-displayed-thousand-separator:"\,";}
         @page
@@ -3273,7 +3255,7 @@ let htmlFormat = (data, rows) => {
          mso-diagonal-up:none;
          mso-protection:locked visible;
          }
-        -->
+        
         </style>
         <!--[if gte mso 9]><xml>
          <x:ExcelWorkbook>

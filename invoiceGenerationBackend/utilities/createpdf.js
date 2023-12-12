@@ -35,12 +35,12 @@ const createPDF =async (invoiceNo, data, items) => {
         },
       ];
 
-      documentPath = path.join(__dirname +  `../generatedpdf/${invoiceNo}.pdf`)
+      let documentPath = path.join(__dirname ,  `..`,`generatedpdf`,`${invoiceNo}.pdf`)
       var document = {
         html: htmlFormat(data, items),
         path: documentPath,
         type: "",
-        data: { users: users },
+        data: { users: users }, 
       };
   
       await pdf

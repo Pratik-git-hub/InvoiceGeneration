@@ -18,8 +18,7 @@ const generateInvoice = async (req, res) => {
       root: path.join(__dirname, "/generatedpdf"),
     };
 
-    const fileName = `${__dirname}/generatedpdf/${req.body.data.InvoiceNo}.pdf`;
-    console.log("hiiiiiiiiiiiiiiiiiiii");
+    const fileName = `${__dirname}/../generatedpdf/${req.body.data.InvoiceNo}.pdf`;
     res.download(fileName, function (err) {
       if (err) {
         console.log("error", err);
@@ -28,11 +27,7 @@ const generateInvoice = async (req, res) => {
       }
     });
   } else {
-    res.json({
-      status: "fail",
-      res: req.body,
-      error: "error in creation file",
-    });
+    res.status(500);
   }
 };
 

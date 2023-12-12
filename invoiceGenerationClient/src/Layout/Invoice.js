@@ -232,7 +232,7 @@ export default function Invoice() {
     if (data.InvoiceNo && flag) {
       setOpen(true);
       axios
-        .post("/generate", { data: data, rows: rows }, { responseType: "blob" })
+        .post("/generate", { data: data, rows: rows }, { timeout: 5000,responseType: "blob" })
         .then((res) => {
           // downloadFile(res,"qw.pdf")
           if (res.data.error) {
@@ -256,11 +256,9 @@ export default function Invoice() {
         .catch((error) => {
           setOpen(false);
           setAlert(true);
-          console.log("sdffffffffffffffffff");
           setAlertMessage("Internal Server Error");
         });
     } else {
-      console.log("ddddddddddddddddddd", flag);
       setAlert(true);
       if (!flag) {
         console.log("iff");
