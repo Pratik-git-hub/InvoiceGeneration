@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const generateInvoice = async (req, res) => {
-
+  console.log("hiii inside generateinvoice");
   let flag = await createPDF(
     req.body.data.InvoiceNo,
     req.body.data,
