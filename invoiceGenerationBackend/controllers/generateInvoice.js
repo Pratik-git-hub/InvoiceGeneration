@@ -13,12 +13,16 @@ const generateInvoice = async (req, res) => {
     req.body.data,
     req.body.rows
   );
+
+  console.log("flag  : ",flag);
   if (flag) {
     const options = {
       root: path.join(__dirname, "/generatedpdf"),
     };
 
     const fileName = `${__dirname}/../generatedpdf/${req.body.data.InvoiceNo}.pdf`;
+
+    console.log("file name : ",fileName);
     res.download(fileName, function (err) {
       if (err) {
         console.log("error", err);

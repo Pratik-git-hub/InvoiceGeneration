@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 
 const createPDF =async (invoiceNo, data, items) => {
    
+    console.log("inside createpdf  ");
     try {
       var options = {
         format: "A4",
@@ -36,6 +37,9 @@ const createPDF =async (invoiceNo, data, items) => {
       ];
 
       let documentPath = path.join(__dirname ,  `..`,`generatedpdf`,`${invoiceNo}.pdf`)
+
+      console.error("documentPath : ",documentPath);
+
       var document = {
         html: htmlFormat(data, items),
         path: documentPath,
@@ -49,11 +53,11 @@ const createPDF =async (invoiceNo, data, items) => {
           console.log("in creation : ",res);
         })
         .catch((error) => {
-          console.error(error);
+          console.error("error in create pdf pdf : ",error);
         });
       return true;
     } catch (error) {
-      console.log("error  : ", error);
+      console.log("error createpdf  : ", error);
       return false;
     }
   };
