@@ -76,7 +76,10 @@ const createPDF = async (invoiceNo, data, items) => {
 };
 
 async function generatePDFfromHTML(htmlContent, outputPath) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+    timeout: 10000,
+  });
   const page = await browser.newPage();
   await page.setContent(htmlContent);
   await page.pdf({ path: outputPath, format: "A4" });
