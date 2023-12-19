@@ -5,18 +5,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i",
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-generator": "^4.16.1",
     "nodemon": "^3.0.2",
     "number-to-words": "^1.2.4",
-    "pdf-creator-node": "^2.3.5"
+    "pdf-creator-node": "^2.3.5",
+    "puppeteer": "^21.6.1"
   }
 }
