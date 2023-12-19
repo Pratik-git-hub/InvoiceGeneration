@@ -5,10 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i",
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +17,10 @@
     "nodemon": "^3.0.2",
     "number-to-words": "^1.2.4",
     "pdf-creator-node": "^2.3.5",
+<<<<<<< HEAD
     "pdf-node-creator": "^1.0.7"
+=======
+    "puppeteer": "^21.6.1"
+>>>>>>> d1012638a2bb02e214e443d972ff7a7a18055016
   }
 }
